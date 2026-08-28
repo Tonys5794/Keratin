@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кератин и ботокс волос в Перми - Ирина Лычагина</title>
+<meta name="description" content="Кератиновое выпрямление, ботокс, холодное восстановление и тотальная реконструкция волос в Перми. Ирина Лычагина (Бадалова), более 7 лет опыта. Улица Целинная, 43, Вышка-2. Открытый прайс по длине волос.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Jost:wght@200;300;400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2316202F'/><text x='32' y='45' font-size='30' font-family='Georgia,serif' text-anchor='middle' fill='%23C0A46A'>ИЛ</text></svg>">
+<style>
+:root{
+  /* палитра снята с логотипа: тёмно-синий круг и золотая монограмма */
+  --bg:#F7F4EE; --bg2:#FFFFFF; --ink:#161D29; --muted:#6E7789;
+  --deep:#16202F; --deep-d:#0E1621; --deep-soft:#EDEDE4;
+  --gold:#9C7F45; --gold-d:#7E6535; --gold-lt:#E6D5A8;
+  --line:#E3DED3; --ok:#5E8A6B;
+  --radius:18px; --wrap:1280px;
+  --shadow:0 18px 50px rgba(22,32,47,.13);
+  --shadow-s:0 8px 24px rgba(22,32,47,.09);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);
+     font-size:clamp(16px,.42vw + 15px,18.5px);line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,3vw,44px)}
+a{color:inherit}
+img{max-width:100%}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.12;letter-spacing:-.01em}
+h2 em{font-style:italic;color:var(--gold)}
+section{padding:clamp(56px,6.2vw,112px) 0}
+
+.demo{background:var(--deep-d);color:#E6E9EF;text-align:center;font-size:13px;padding:14px 24px;line-height:1.45;font-weight:300}
+.demo b{color:#fff;font-weight:600}
+
+/* шапка */
+header{position:fixed;top:0;left:0;right:0;z-index:80;border-bottom:1px solid transparent;
+       transition:background .35s,border-color .35s}
+header.solid{background:rgba(247,244,238,.94);backdrop-filter:blur(12px);border-bottom-color:var(--line)}
+header .wrap{display:flex;align-items:center;gap:28px;height:82px}
+.logo{font-family:'Jost',var(--sans);font-size:17px;font-weight:300;letter-spacing:.11em;text-transform:uppercase;
+      text-decoration:none;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .35s;color:var(--ink)}
+header.solid .logo{opacity:1;pointer-events:auto}
+.menu{display:flex;gap:30px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;
+      color:rgba(255,255,255,.88)}
+.menu a{text-decoration:none;transition:.2s;white-space:nowrap}
+.menu a:hover{color:#fff}
+header.solid .menu{color:var(--muted)}
+header.solid .menu a:hover{color:var(--gold)}
+.hd-r{display:flex;align-items:center;gap:24px;margin-left:auto}
+.hd-tel,.hd-hours{font-size:14.5px;text-decoration:none;white-space:nowrap;color:#fff}
+.hd-hours{color:rgba(255,255,255,.78)}
+header.solid .hd-tel{color:var(--ink)}
+header.solid .hd-hours{color:var(--muted)}
+header .hbtn{padding:11px 24px;font-size:14px}
+@media(max-width:1520px){.hd-hours{display:none}}
+@media(max-width:1280px){.menu{gap:15px;font-size:11.5px;letter-spacing:.09em}header .wrap{gap:20px}}
+@media(max-width:1100px){.hd-tel{display:none}}
+@media(max-width:960px){
+  .menu{display:none}
+  header .wrap{height:70px}
+  .logo{opacity:1;pointer-events:auto;color:#fff}
+  header.solid .logo{color:var(--ink)}
+}
+
+/* нижняя панель на телефоне */
+.mbar{display:none}
+@media(max-width:960px){
+  body{padding-bottom:74px}
+  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:90;gap:10px;padding:11px 14px;
+        background:rgba(247,244,238,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .mbar .btn{flex:1;text-align:center;padding:13px 8px;font-size:14px}
+}
+
+/* кнопки */
+.btn{display:inline-block;background:var(--deep);color:#fff;text-decoration:none;
+     padding:15px 30px;border-radius:999px;font-weight:600;font-size:15px;font-family:var(--sans);
+     border:0;cursor:pointer;transition:.18s;white-space:nowrap;box-shadow:var(--shadow-s)}
+.btn:hover{background:var(--deep-d);transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:var(--gold-d)}
+.btn-line{background:transparent;color:var(--deep);border:1.5px solid var(--deep);box-shadow:none}
+.btn-line:hover{background:var(--deep);color:#fff}
+.btn-light{background:#F5F1E7;color:var(--deep-d)}
+.btn-light:hover{background:#fff}
+
+/* первый экран */
+.cover{position:relative;background:linear-gradient(140deg,#0E1621 0%,#16202F 52%,#2B3A50 100%);
+  color:#fff;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;
+  padding:118px 0 0;overflow:hidden}
+.cover:before{content:'';position:absolute;width:760px;height:760px;border-radius:50%;
+  right:-270px;top:-310px;background:rgba(192,164,106,.15)}
+.cover:after{content:'';position:absolute;width:420px;height:420px;border-radius:50%;
+  left:-190px;bottom:40px;background:rgba(255,255,255,.045)}
+.cover-in{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding:24px 24px 40px}
+.cover-eyebrow{font-size:12.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold-lt);font-weight:600}
+.cover-name{font-family:var(--serif);font-weight:600;letter-spacing:.02em;
+  font-size:clamp(40px,7.4vw,96px);color:#fff;line-height:1;margin-top:16px}
+.cover-role{display:flex;align-items:center;gap:18px;margin-top:22px;font-size:13px;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(255,255,255,.86);flex-wrap:wrap;justify-content:center}
+.cover-role span{display:block;width:44px;height:1px;background:rgba(255,255,255,.45)}
+.cover-slogan{margin-top:30px;font-family:var(--serif);font-style:italic;font-weight:600;
+  font-size:clamp(24px,3.4vw,42px);color:var(--gold-lt);line-height:1.2}
+.cover-lead{margin-top:20px;max-width:44em;font-size:clamp(15.5px,.6vw + 13px,18px);line-height:1.65;
+  color:rgba(255,255,255,.78);font-weight:300}
+.cover-cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;justify-content:center}
+.cover .btn{background:#F5F1E7;color:var(--deep-d)}
+.cover .btn:hover{background:#fff}
+.cover .btn-gold{background:var(--gold);color:#fff}
+.cover .btn-gold:hover{background:var(--gold-d)}
+.cover .btn-line{background:transparent;border:1.5px solid rgba(255,255,255,.45);color:#fff;box-shadow:none}
+.cover .btn-line:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.cover-stats{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,.16)}
+.cover-stats>div{padding:26px 24px;text-align:center;border-left:1px solid rgba(255,255,255,.13)}
+.cover-stats>div:first-child{border-left:0}
+.cover-stats b{display:block;font-family:var(--serif);font-size:clamp(22px,1.9vw,30px);font-weight:600;line-height:1.2}
+.cover-stats span{display:block;margin-top:5px;font-size:12.5px;color:rgba(255,255,255,.66);font-weight:300}
+@media(max-width:960px){
+  .cover{padding-top:96px}
+  .cover-stats{grid-template-columns:1fr 1fr}
+  .cover-stats>div{padding:20px 14px;border-top:1px solid rgba(255,255,255,.13)}
+  .cover-stats>div:nth-child(odd){border-left:0}
+  .cover-stats>div:nth-child(-n+2){border-top:0}
+  .cover-cta .btn{width:100%}
+}
+
+/* бегущая строка */
+.strip{background:var(--deep-d);color:#E4E7EE;overflow:hidden;padding:15px 0;white-space:nowrap}
+.strip-track{display:inline-flex;animation:scroll 42s linear infinite}
+.strip-item{padding:0 26px;font-size:14px;font-weight:300;letter-spacing:.04em;text-transform:uppercase}
+.strip-item:after{content:'\2726';margin-left:26px;color:var(--gold-lt);font-size:11px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.strip-track{animation:none}}
+
+/* заголовки секций */
+.sec-head{margin-bottom:clamp(28px,3vw,52px);max-width:46em}
+.sec-head .tag{color:var(--gold);font-size:12.5px;font-weight:700;letter-spacing:.13em;
+               text-transform:uppercase;display:block;margin-bottom:12px}
+.sec-head h2{font-size:clamp(27px,3.1vw,50px);margin-bottom:12px}
+.sec-head p{color:var(--muted);font-weight:300}
+.light{background:var(--bg2)}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* прайс */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.tab{padding:12px 24px;border-radius:999px;border:1.5px solid var(--line);background:#fff;
+     cursor:pointer;font-family:var(--sans);font-size:15px;font-weight:600;color:var(--muted);transition:.15s}
+.tab:hover{border-color:var(--deep)}
+.tab.on{background:var(--deep);border-color:var(--deep);color:#fff;box-shadow:var(--shadow-s)}
+.plist{display:none;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+       border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-s)}
+.plist.on{display:grid}
+@media(max-width:760px){.plist.on{grid-template-columns:1fr}}
+.row{display:flex;justify-content:space-between;gap:16px;padding:15px 22px;background:#fff;
+     align-items:baseline;transition:.15s;min-width:0}
+.row:hover{background:var(--deep-soft)}
+.row .nm{font-size:15.5px}
+.row .nm small{display:block;font-size:12.5px;color:var(--muted);font-weight:300}
+.row .pr{font-family:var(--serif);font-size:21px;font-weight:700;white-space:nowrap;color:var(--deep)}
+.upd{font-size:12.5px;color:var(--muted);margin-top:16px;font-weight:300}
+
+/* почему */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,1.6vw,26px)}
+.why article{background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+             padding:28px;box-shadow:var(--shadow-s);transition:.2s;min-width:0}
+.why article:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.why .ic{width:44px;height:44px;border-radius:12px;background:var(--deep-soft);color:var(--gold);
+         display:grid;place-items:center;font-size:20px;margin-bottom:14px;font-family:var(--serif);font-weight:700}
+.why h3{font-size:21px;margin-bottom:7px}
+.why p{font-size:14.5px;color:var(--muted);font-weight:300}
+
+/* о мастере */
+.doc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,3.4vw,58px);align-items:start}
+@media(max-width:940px){.doc-grid{grid-template-columns:1fr}}
+.doc-grid>*{min-width:0}
+.q-big{font-family:var(--serif);font-size:clamp(21px,1.9vw,32px);line-height:1.3;color:var(--deep);
+       border-left:3px solid var(--gold);padding:2px 0 2px 22px;margin-bottom:16px}
+.q-big:before{content:'\00AB'} .q-big:after{content:'\00BB'}
+.q-from{font-size:14px;color:var(--muted);font-weight:300;margin-bottom:24px}
+.doc-txt p{color:var(--muted);font-weight:300;margin-bottom:14px}
+.doc-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px}
+.doc-facts div{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px}
+.doc-facts b{display:block;font-family:var(--serif);font-size:21px;color:var(--deep)}
+.doc-facts span{font-size:13px;color:var(--muted);font-weight:300}
+@media(max-width:520px){.doc-facts{grid-template-columns:1fr}}
+.doc-photo{position:relative}
+.doc-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border-radius:var(--radius);
+  border:1px solid var(--line);box-shadow:var(--shadow)}
+.doc-photo figcaption{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,255,255,.95);
+  border-radius:14px;padding:14px 18px;box-shadow:var(--shadow-s)}
+.doc-photo b{display:block;font-family:var(--serif);font-size:20px;font-weight:600}
+.doc-photo span{font-size:13px;color:var(--muted);font-weight:300}
+
+/* подарки новым */
+.gifts{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px)}
+@media(max-width:900px){.gifts{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.gifts{grid-template-columns:1fr}}
+.gift{background:var(--deep);color:#fff;border-radius:var(--radius);padding:26px 24px;min-width:0}
+.gift b{display:block;font-family:var(--serif);font-size:26px;font-weight:600;color:var(--gold-lt);margin-bottom:6px}
+.gift span{font-size:14.5px;color:rgba(255,255,255,.78);font-weight:300}
+
+/* работы */
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px)}
+@media(max-width:1000px){.g-grid{grid-template-columns:1fr 1fr}}
+.g{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--bg2);box-shadow:var(--shadow-s);min-width:0}
+.g img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.g figcaption{padding:14px 18px;font-size:14px;color:var(--muted);font-weight:300;border-top:1px solid var(--line)}
+
+/* отзывы */
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,1.6vw,24px)}
+@media(max-width:940px){.rv-grid{grid-template-columns:1fr}}
+.rv-grid>*{min-width:0}
+.r{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-s)}
+.stars{color:var(--gold);letter-spacing:3px;font-size:14px;margin-bottom:14px}
+.r p{font-size:15.5px;color:var(--muted);font-weight:300}
+.r .who{margin-top:18px;font-weight:600;font-size:15px}
+.r .when{font-size:13px;color:var(--muted);font-weight:300}
+
+/* контакты */
+.c-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,3.4vw,58px);align-items:start}
+@media(max-width:940px){.c-grid{grid-template-columns:1fr}}
+.c-grid>*{min-width:0}
+.c-list{display:grid;gap:20px}
+.c-row .k{font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:4px}
+.c-row .v{font-size:18px}
+.c-row .v a{text-decoration:none;border-bottom:1px solid var(--line)}
+.c-row small{display:block;color:var(--muted);font-size:14px;margin-top:4px;font-weight:300}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
+      padding:32px;box-shadow:var(--shadow)}
+.card h3{font-size:26px;margin-bottom:6px}
+.card .sub{font-size:15px;color:var(--muted);margin-bottom:20px;font-weight:300}
+.acts{display:grid;gap:10px}
+.acts .btn{width:100%;text-align:center;padding:16px 22px}
+.note{font-size:12.5px;color:var(--muted);margin-top:14px;font-weight:300}
+
+/* правовое */
+.legal{background:var(--deep);color:#E2E6EE}
+.legal h3{font-size:24px;margin-bottom:14px;color:#fff}
+.legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,3vw,52px)}
+@media(max-width:860px){.legal-grid{grid-template-columns:1fr}}
+.legal-grid>*{min-width:0}
+.legal p,.legal li{font-size:14px;font-weight:300;line-height:1.72;color:rgba(226,230,238,.82)}
+.legal ul{margin:8px 0 0;padding-left:18px}
+.legal b{color:#fff;font-weight:600}
+.legal a{color:#fff}
+.legal .warn{margin:14px 0;padding:14px 18px;border:1px solid rgba(230,213,168,.4);border-radius:12px;
+             background:rgba(192,164,106,.14);font-size:14.5px;color:#fff;font-weight:500}
+
+footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-size:14px;font-weight:300}
+.ft{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+.ft .logo{color:#fff;font-size:19px;opacity:1;pointer-events:auto;font-family:'Jost',var(--sans);
+          font-weight:300;letter-spacing:.16em;text-transform:uppercase}
+@media(max-width:380px){header .hbtn{padding:10px 15px;font-size:13px}header .wrap{gap:12px}
+  .logo{font-size:15px;letter-spacing:.07em}.q-big{font-size:19px;padding-left:14px}.wrap{padding:0 16px}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap">
+    <a class="logo" href="#top">Ирина Лычагина</a>
+    <nav class="menu">
+      <a href="#ceny">Цены</a>
+      <a href="#master">О мастере</a>
+      <a href="#raboty">Работы</a>
+      <a href="#otzyvy">Отзывы</a>
+      <a href="#kontakty">Контакты</a>
+    </nav>
+    <div class="hd-r">
+      <a class="hd-tel" href="tel:+79081057757">+7 908 105-77-57</a>
+      <span class="hd-hours">Ежедневно 8:00-23:00</span>
+      <a class="btn btn-light hbtn" href="#kontakty">Записаться</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="cover">
+  <div class="cover-in">
+    <div class="cover-eyebrow">Пермь · Вышка-2 · Лысьва</div>
+    <div class="cover-name">Ирина Лычагина</div>
+    <div class="cover-role"><span></span>Кератин · Ботокс · Реконструкция волос<span></span></div>
+    <div class="cover-slogan">Уход, которого ждали твои волосы</div>
+    <p class="cover-lead">Международный эксперт по реконструкции волос и кератиновому выпрямлению. Более семи лет опыта, более трёх тысяч довольных клиентов. Улица Целинная, 43. Приём по предварительной записи.</p>
+    <div class="cover-cta">
+      <a class="btn btn-gold" href="#ceny">Смотреть цены</a>
+      <a class="btn" href="tel:+79081057757">Позвонить и записаться</a>
+      <a class="btn btn-line" href="https://vk.ru/keratin_badalova" target="_blank" rel="noopener">Написать во ВКонтакте</a>
+    </div>
+  </div>
+  <div class="cover-stats">
+    <div><b>5,0</b><span>рейтинг в 2ГИС и ВК</span></div>
+    <div><b>7 лет</b><span>опыта в реконструкции волос</span></div>
+    <div><b>3 000+</b><span>довольных клиентов</span></div>
+    <div><b>3-6 месяцев</b><span>держится эффект</span></div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <span class="strip-item">Кератиновое выпрямление</span><span class="strip-item">Ботокс для волос</span><span class="strip-item">Холодное восстановление</span><span class="strip-item">Тотальная реконструкция</span><span class="strip-item">Нанопластика</span><span class="strip-item">Пилинг кожи головы</span><span class="strip-item">Прикорневой объём</span><span class="strip-item">SPA для головы</span><span class="strip-item">Обучение</span><span class="strip-item">Кератиновое выпрямление</span><span class="strip-item">Ботокс для волос</span><span class="strip-item">Холодное восстановление</span><span class="strip-item">Тотальная реконструкция</span><span class="strip-item">Нанопластика</span><span class="strip-item">Пилинг кожи головы</span><span class="strip-item">Прикорневой объём</span><span class="strip-item">SPA для головы</span><span class="strip-item">Обучение</span>
+  </div>
+</div>
+
+<section class="light" id="ceny">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Прайс</span>
+      <h2>Цена зависит от длины, <em>и она открыта</em></h2>
+      <p>Кератин и ботокс в горячей технике. Процедуры убирают пушистость и выпрямляют завиток разной степени, эффект держится от трёх до шести месяцев. Точную сумму мастер называет до начала работы.</p>
+    </div>
+
+    <div class="tabs rv">
+      <button class="tab on" data-t="irina">Эксперт Ирина</button>
+      <button class="tab" data-t="maria">Мастер Мария</button>
+      <button class="tab" data-t="violetta">Мастер Виолетта</button>
+      <button class="tab" data-t="esche">Другие услуги</button>
+    </div>
+
+    <div class="plist on rv" id="irina">
+      <div class="row"><span class="nm">Выше плеч<small>до 25 см</small></span><span class="pr">3 500 ₽</span></div>
+      <div class="row"><span class="nm">По плечи<small>25-30 см</small></span><span class="pr">4 000 ₽</span></div>
+      <div class="row"><span class="nm">Верх лопаток<small>30-35 см</small></span><span class="pr">4 500 ₽</span></div>
+      <div class="row"><span class="nm">Низ лопаток<small>40-45 см</small></span><span class="pr">5 000 ₽</span></div>
+      <div class="row"><span class="nm">Середина спины<small>50-55 см</small></span><span class="pr">5 500 ₽</span></div>
+      <div class="row"><span class="nm">Талия<small>55-65 см</small></span><span class="pr">6 000 ₽</span></div>
+      <div class="row"><span class="nm">Поясница<small>65-70 см</small></span><span class="pr">6 500 ₽</span></div>
+      <div class="row"><span class="nm">Ниже поясницы<small>от 75 см</small></span><span class="pr">от 7 500 ₽</span></div>
+      <div class="row"><span class="nm">Доплата за густоту<small>0-6 см</small></span><span class="pr">500 ₽</span></div>
+      <div class="row"><span class="nm">Доплата за густоту<small>6-10 см</small></span><span class="pr">1 000 ₽</span></div>
+      <div class="row"><span class="nm">Доплата за густоту<small>от 14 см</small></span><span class="pr">2 000 ₽</span></div>
+      <div class="row"><span class="nm">Холодное восстановление к процедуре</span><span class="pr">от 1 000 ₽</span></div>
+    </div>
+
+    <div class="plist rv" id="maria">
+      <div class="row"><span class="nm">Выше плеч<small>до 25 см</small></span><span class="pr">2 500 ₽</span></div>
+      <div class="row"><span class="nm">По плечи<small>25-30 см</small></span><span class="pr">3 000 ₽</span></div>
+      <div class="row"><span class="nm">Верх лопаток<small>30-35 см</small></span><span class="pr">3 500 ₽</span></div>
+      <div class="row"><span class="nm">Низ лопаток<small>40-45 см</small></span><span class="pr">4 000 ₽</span></div>
+      <div class="row"><span class="nm">Середина спины<small>50-55 см</small></span><span class="pr">4 500 ₽</span></div>
+      <div class="row"><span class="nm">Талия<small>55-65 см</small></span><span class="pr">5 500 ₽</span></div>
+      <div class="row"><span class="nm">Поясница<small>65-75 см</small></span><span class="pr">6 500 ₽</span></div>
+      <div class="row"><span class="nm">Доплата за густоту<small>0-6 см · 6-10 см · 10-14 см · более 14 см</small></span><span class="pr">500-2 000 ₽</span></div>
+    </div>
+
+    <div class="plist rv" id="violetta">
+      <div class="row"><span class="nm">Выше плеч<small>до 25 см</small></span><span class="pr">2 000 ₽</span></div>
+      <div class="row"><span class="nm">По плечи<small>25-30 см</small></span><span class="pr">2 500 ₽</span></div>
+      <div class="row"><span class="nm">Верх лопаток<small>30-35 см</small></span><span class="pr">3 000 ₽</span></div>
+      <div class="row"><span class="nm">Низ лопаток<small>40-45 см</small></span><span class="pr">3 500 ₽</span></div>
+      <div class="row"><span class="nm">Середина спины<small>50-55 см</small></span><span class="pr">4 000 ₽</span></div>
+      <div class="row"><span class="nm">Талия<small>55-65 см</small></span><span class="pr">4 500 ₽</span></div>
+      <div class="row"><span class="nm">Поясница<small>65-75 см</small></span><span class="pr">5 500 ₽</span></div>
+      <div class="row"><span class="nm">Доплата за густоту<small>0-8 см · 8-12 см · 12-14 см · более 14 см</small></span><span class="pr">500-2 000 ₽</span></div>
+    </div>
+
+    <div class="plist rv" id="esche">
+      <div class="row"><span class="nm">Консультация</span><span class="pr">1 000 ₽</span></div>
+      <div class="row"><span class="nm">Холодное восстановление</span><span class="pr">2 000-8 000 ₽</span></div>
+      <div class="row"><span class="nm">Тотальная реконструкция</span><span class="pr">от 4 000 ₽</span></div>
+      <div class="row"><span class="nm">Пилинг кожи головы</span><span class="pr">2 000-2 500 ₽</span></div>
+      <div class="row"><span class="nm">Нанопластика</span><span class="pr">по запросу</span></div>
+      <div class="row"><span class="nm">Обучение<small>кератин и ботокс, с нуля</small></span><span class="pr">50 000 ₽</span></div>
+    </div>
+
+    <p class="upd">Прайс из сообщества ВКонтакте. Цены не являются публичной офертой: процедура подбирается индивидуально, исходя из степени повреждения волос и пожеланий.</p>
+  </div>
+</section>
+
+<section id="podarki">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Новым клиентам</span>
+      <h2>Четыре вещи <em>в первый визит</em></h2>
+      <p>Всё это входит в первую процедуру и не оплачивается отдельно.</p>
+    </div>
+    <div class="gifts rv">
+      <div class="gift"><b>−500 ₽</b><span>скидка на первую процедуру</span></div>
+      <div class="gift"><b>В подарок</b><span>подравнивание кончиков</span></div>
+      <div class="gift"><b>Бесплатно</b><span>консультация по домашнему уходу</span></div>
+      <div class="gift"><b>Индивидуально</b><span>подбор средств под ваши волосы</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="pochemu">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Почему сюда</span>
+      <h2>Не мастер по инструкции, <em>а технолог</em></h2>
+    </div>
+    <div class="why rv">
+      <article>
+        <div class="ic">&#9670;</div>
+        <h3>Авторские составы</h3>
+        <p>Ирина подбирает индивидуальные составы и делает авторские миксы под каждый тип волос, а не работает одним средством на всех.</p>
+      </article>
+      <article>
+        <div class="ic">7</div>
+        <h3>Семь лет и реестр</h3>
+        <p>Более семи лет практики, более трёх тысяч клиентов, внесена в реестр международных мастеров.</p>
+      </article>
+      <article>
+        <div class="ic">&#9711;</div>
+        <h3>Работа с повреждениями</h3>
+        <p>Восстановление даже после сильных повреждений: осветлений, частых окрашиваний, термоукладок.</p>
+      </article>
+      <article>
+        <div class="ic">₽</div>
+        <h3>Цена известна заранее</h3>
+        <p>Прайс по длине волос открыт. Доплата за густоту тоже прописана, сюрпризов у кассы не будет.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="master">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">О мастере</span>
+      <h2>Ирина <em>Лычагина</em></h2>
+      <p>Международный эксперт в сфере реконструкции волос и кератинового выпрямления.</p>
+    </div>
+    <div class="doc-grid">
+      <div class="doc-txt rv">
+        <div class="q-big">Я не просто мастер, я технолог, который работает с волосами на глубоком уровне</div>
+        <div class="q-from">Ирина Лычагина, из описания сообщества</div>
+        <p>«Подбираю индивидуальные составы и создаю авторские миксы под каждый тип волос. Моя цель - создать для вас идеальное полотно: эффект жидкого шёлка, гладкие, блестящие, плотные волосы, восстановление даже после сильных повреждений».</p>
+        <p>Более семи лет опыта, более трёх тысяч довольных клиентов, внесена в реестр международных мастеров. Сильная клиентская база в Омске и Лысьве.</p>
+        <p>«Переехала из Сибири на Урал, теперь принимаю в Перми и открываю запись для новых клиентов». Кроме Ирины в студии работают мастера Мария и Виолетта, у них своя сетка цен.</p>
+        <div class="doc-facts">
+          <div><b>Целинная, 43</b><span>Мотовилихинский район, Вышка-2</span></div>
+          <div><b>8:00-23:00</b><span>ежедневно, по записи</span></div>
+          <div><b>С 2022 года</b><span>сообщество ВКонтакте, 1 291 подписчик</span></div>
+          <div><b>51 отзыв</b><span>в ВК и 12 в 2ГИС, все пятёрки</span></div>
+        </div>
+      </div>
+      <figure class="doc-photo rv">
+        <img src="master.jpg" alt="Ирина Лычагина, мастер по реконструкции волос">
+        <figcaption><b>Ирина Лычагина</b><span>кератин, ботокс, реконструкция волос</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="raboty">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Работы</span>
+      <h2>Эффект <em>жидкого шёлка</em></h2>
+      <p>Фотографии из сообщества ВКонтакте, где выложено больше четырёхсот работ.</p>
+    </div>
+    <div class="g-grid rv">
+      <figure class="g"><img src="g-1.jpg" alt="Гладкие блестящие волосы после кератина"><figcaption>Кератин, растяжка цвета</figcaption></figure>
+      <figure class="g"><img src="g-2.jpg" alt="Результат кератинового выпрямления"><figcaption>Кератиновое выпрямление</figcaption></figure>
+      <figure class="g"><img src="g-3.jpg" alt="Светлые волосы после процедуры"><figcaption>Работа на блонде</figcaption></figure>
+      <figure class="g"><img src="g-4.jpg" alt="Кабинет студии"><figcaption>В кабинете</figcaption></figure>
+    </div>
+    <p class="upd">Фотографии опубликованы мастером в открытом сообществе. Перед публикацией на сайте согласуйте снимки с клиентами.</p>
+  </div>
+</section>
+
+<section id="otzyvy">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Отзывы</span>
+      <h2>Что пишут <em>клиенты</em></h2>
+      <p>Отзывы из карточки 2ГИС: 11 оценок, средний балл 5,0, отрицательных нет.</p>
+    </div>
+    <div class="rv-grid rv">
+      <div class="r"><div class="stars">★★★★★</div>
+        <p>Ирина мастер своего дела! Мои убитые осветлениями волосы превратила в гриву, бесконечно рада.</p>
+        <div class="who">Арина Широкова</div><div class="when">2ГИС</div></div>
+      <div class="r"><div class="stars">★★★★★</div>
+        <p>Волосы прямые, шелковистые, блестящие, чистые весь день, при расчёсывании выпадение минимальное.</p>
+        <div class="who">Елена Андреева</div><div class="when">2ГИС</div></div>
+      <div class="r"><div class="stars">★★★★★</div>
+        <p>Потрясающий результат! Мастер Ирина сделала реконструкцию волос: они стали гладкими, мягкими, блестящими.</p>
+        <div class="who">Маргарита Нешатаева</div><div class="when">2ГИС</div></div>
+      <div class="r"><div class="stars">★★★★★</div>
+        <p>После проведения процедур волосы выглядят просто восхитительно! Результат сохраняется до полугода.</p>
+        <div class="who">НС А</div><div class="when">2ГИС</div></div>
+      <div class="r"><div class="stars">★★★★★</div>
+        <p>Волосы как с обложки глянцевого журнала и главное сохраняют свои свойства на протяжении нескольких месяцев.</p>
+        <div class="who">Дарианна Заика</div><div class="when">2ГИС</div></div>
+      <div class="r"><div class="stars">★★★★★</div>
+        <p>Ира профессионал в своём деле, с подобранным уходом удалось отрастить волосы.</p>
+        <div class="who">Наталья</div><div class="when">2ГИС</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="kontakty">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="tag">Контакты</span>
+      <h2>Как <em>записаться</em></h2>
+    </div>
+    <div class="c-grid">
+      <div class="c-list rv">
+        <div class="c-row">
+          <div class="k">Адрес</div>
+          <div class="v">Пермь, улица Целинная, 43</div>
+          <small>Мотовилихинский район, микрорайон Вышка-2, 614054. Ирина также принимает в Лысьве, время уточняйте.</small>
+        </div>
+        <div class="c-row">
+          <div class="k">Режим работы</div>
+          <div class="v">Ежедневно с 8:00 до 23:00</div>
+          <small>По предварительной записи</small>
+        </div>
+        <div class="c-row">
+          <div class="k">Телефон</div>
+          <div class="v"><a href="tel:+79081057757">+7 908 105-77-57</a></div>
+        </div>
+        <div class="c-row">
+          <div class="k">Соцсети</div>
+          <div class="v"><a href="https://vk.ru/keratin_badalova" target="_blank" rel="noopener">ВКонтакте</a> · <a href="https://t.me/keratin_badalova" target="_blank" rel="noopener">Telegram</a></div>
+          <small>Прайс, работы и запись в сообществе</small>
+        </div>
+      </div>
+      <div class="card rv">
+        <h3>Записаться на процедуру</h3>
+        <p class="sub">Напишите или позвоните. Пришлите фото волос и напишите длину, мастер сразу назовёт цену и подберёт процедуру.</p>
+        <div class="acts">
+          <a class="btn btn-gold" href="tel:+79081057757">Позвонить +7 908 105-77-57</a>
+          <a class="btn" href="https://vk.ru/keratin_badalova" target="_blank" rel="noopener">Написать во ВКонтакте</a>
+          <a class="btn btn-line" href="https://t.me/keratin_badalova" target="_blank" rel="noopener">Написать в Telegram</a>
+          <a class="btn btn-line" href="https://2gis.ru/perm/firm/70000001116797274" target="_blank" rel="noopener">Открыть на карте 2ГИС</a>
+        </div>
+        <p class="note">Форм на сайте нет: запись только напрямую, чтобы заявка не потерялась.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="legal" id="pravovoe">
+  <div class="wrap">
+    <div class="legal-grid">
+      <div>
+        <h3>Исполнитель услуг</h3>
+        <p>
+          Наименование: <b>[указать: самозанятая / ИП, полное наименование]</b><br>
+          ФИО: Лычагина Ирина <b>[отчество уточнить]</b><br>
+          ИНН: <b>[указать]</b> · ОГРНИП: <b>[указать, если ИП]</b><br>
+          Адрес оказания услуг: 614054, Пермский край, г. Пермь, ул. Целинная, 43<br>
+          Телефон: <a href="tel:+79081057757">+7 908 105-77-57</a><br>
+          Режим работы: ежедневно с 8:00 до 23:00, по предварительной записи
+        </p>
+        <p style="margin-top:14px">Цены на сайте не являются публичной офертой. Итоговая стоимость зависит от длины и густоты волос и определяется мастером до начала процедуры. Сайт не собирает персональные данные: форм заявок нет, запись ведётся по телефону и в сообщениях.</p>
+      </div>
+      <div>
+        <h3>Важно перед процедурой</h3>
+        <div class="warn">Услуги не являются медицинскими. Имеются ограничения, уточняйте у мастера.</div>
+        <p>Процедуру переносят или подбирают иначе, если есть:</p>
+        <ul>
+          <li>повреждения и воспаления кожи головы;</li>
+          <li>индивидуальная непереносимость компонентов состава;</li>
+          <li>свежее окрашивание или осветление, сделанное менее чем за две недели до процедуры;</li>
+          <li>беременность и грудное вскармливание: решение принимается вместе с мастером.</li>
+        </ul>
+        <p style="margin-top:14px">Мастер уточняет состояние волос и кожи головы на консультации. Сайт носит информационный характер.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap ft">
+    <span class="logo">Ирина Лычагина</span>
+    <span>Пермь, ул. Целинная, 43 · ежедневно 8:00-23:00 · +7 908 105-77-57</span>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-gold" href="tel:+79081057757">Позвонить</a>
+  <a class="btn" href="https://vk.ru/keratin_badalova">Написать в ВК</a>
+</div>
+
+<div class="demo">Это <b>демонстрационный пример</b> сайта. Данные взяты из открытой карточки 2ГИС и сообщества ВКонтакте, реквизиты подставляются после согласования.</div>
+
+<script>
+(function(){
+  var hd=document.getElementById('hd');
+  function upd(){hd.classList.toggle('solid', window.scrollY>60)}
+  upd(); window.addEventListener('scroll',upd,{passive:true});
+
+  var tabs=document.querySelectorAll('.tab');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.remove('on')});
+      t.classList.add('on');
+      document.querySelectorAll('.plist').forEach(function(p){p.classList.remove('on')});
+      document.getElementById(t.dataset.t).classList.add('on');
+    });
+  });
+
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+})();
+</script>
+
+</body>
+</html>
