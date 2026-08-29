@@ -37,7 +37,7 @@ section{padding:clamp(56px,6.2vw,112px) 0}
 .demo b{color:#fff;font-weight:600}
 
 /* шапка */
-header{position:fixed;top:0;left:0;right:0;z-index:80;border-bottom:1px solid transparent;
+header{position:fixed;top:46px;left:0;right:0;z-index:80;border-bottom:1px solid transparent;
        transition:background .35s,border-color .35s}
 header.solid{background:rgba(247,244,238,.94);backdrop-filter:blur(12px);border-bottom-color:var(--line)}
 header .wrap{display:flex;align-items:center;gap:28px;height:82px}
@@ -90,7 +90,7 @@ header .hbtn{padding:11px 24px;font-size:14px}
 /* первый экран */
 .cover{position:relative;background:linear-gradient(140deg,#0E1621 0%,#16202F 52%,#2B3A50 100%);
   color:#fff;min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;
-  padding:118px 0 0;overflow:hidden}
+  padding:164px 0 0;overflow:hidden}
 .cover:before{content:'';position:absolute;width:760px;height:760px;border-radius:50%;
   right:-270px;top:-310px;background:rgba(192,164,106,.15)}
 .cover:after{content:'';position:absolute;width:420px;height:420px;border-radius:50%;
@@ -121,7 +121,7 @@ header .hbtn{padding:11px 24px;font-size:14px}
 .cover-stats b{display:block;font-family:var(--serif);font-size:clamp(22px,1.9vw,30px);font-weight:600;line-height:1.2}
 .cover-stats span{display:block;margin-top:5px;font-size:12.5px;color:rgba(255,255,255,.66);font-weight:300}
 @media(max-width:960px){
-  .cover{padding-top:96px}
+  .cover{padding-top:142px}
   .cover-stats{grid-template-columns:1fr 1fr}
   .cover-stats>div{padding:20px 14px;border-top:1px solid rgba(255,255,255,.13)}
   .cover-stats>div:nth-child(odd){border-left:0}
@@ -260,9 +260,52 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
           font-weight:300;letter-spacing:.16em;text-transform:uppercase}
 @media(max-width:380px){header .hbtn{padding:10px 15px;font-size:13px}header .wrap{gap:12px}
   .logo{font-size:15px;letter-spacing:.07em}.q-big{font-size:19px;padding-left:14px}.wrap{padding:0 16px}}
+
+/* ===== ВЫБОР ГОРОДА ===== */
+.citybar{position:fixed;top:0;left:0;right:0;height:46px;z-index:100;background:var(--deep-d);
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  border-bottom:1px solid rgba(230,213,168,.18)}
+.citybar-t{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(230,213,168,.72);
+  font-weight:600;margin-right:4px}
+.cbtn{font-family:var(--sans);font-size:13.5px;font-weight:600;letter-spacing:.05em;cursor:pointer;
+  background:transparent;border:1.5px solid rgba(230,213,168,.35);color:#F0E9DA;
+  padding:6px 20px;border-radius:999px;transition:.18s;line-height:1.25}
+.cbtn:hover{border-color:var(--gold-lt)}
+.cbtn.on{background:var(--gold);border-color:var(--gold);color:#fff}
+@media(max-width:520px){.citybar{gap:7px;height:44px}.citybar-t{display:none}
+  .cbtn{padding:6px 16px;font-size:13px}header{top:44px}}
+
+body.city-perm .only-lysva{display:none!important}
+body.city-lysva .only-perm{display:none!important}
+
+.tbd{color:var(--gold);border-bottom:1px dashed rgba(156,127,69,.65);font-weight:600}
+.cover .tbd{color:var(--gold-lt);border-bottom-color:rgba(230,213,168,.55)}
+
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.mcard{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;box-shadow:var(--shadow-s)}
+.mcard .ph{width:88px;height:88px;border-radius:50%;background:var(--deep-soft);
+  display:flex;align-items:center;justify-content:center;color:var(--gold);
+  font-family:var(--serif);font-size:32px;font-weight:600;margin-bottom:16px}
+.mcard h3{font-family:var(--serif);font-size:27px;font-weight:600;margin-bottom:4px;line-height:1.15}
+.mcard .role{font-size:12.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);
+  font-weight:700;margin-bottom:10px}
+.mcard p{color:var(--muted);font-size:15.5px;font-weight:300}
+@media(max-width:760px){.mgrid{grid-template-columns:1fr}}
+
+.askbox{background:var(--bg2);border:1.5px dashed var(--gold);border-radius:var(--radius);
+  padding:34px 28px;text-align:center;color:var(--muted);font-weight:300}
+.askbox b{display:block;font-family:var(--serif);font-size:26px;color:var(--ink);
+  font-weight:600;margin-bottom:10px}
 </style>
 </head>
-<body>
+<body class="city-perm">
+
+<div class="citybar">
+  <span class="citybar-t">Ваш город</span>
+  <button class="cbtn on" type="button" data-city="perm">Пермь</button>
+  <button class="cbtn" type="button" data-city="lysva">Лысьва</button>
+</div>
 
 <header id="hd">
   <div class="wrap">
@@ -275,8 +318,10 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
       <a href="#kontakty">Контакты</a>
     </nav>
     <div class="hd-r">
-      <a class="hd-tel" href="tel:+79081057757">+7 908 105-77-57</a>
-      <span class="hd-hours">Ежедневно 8:00-23:00</span>
+      <a class="hd-tel only-perm" href="tel:+79081057757">+7 908 105-77-57</a>
+      <span class="hd-tel only-lysva"><span class="tbd">телефон уточняется</span></span>
+      <span class="hd-hours only-perm">Ежедневно 8:00-23:00</span>
+      <span class="hd-hours only-lysva">График уточняется</span>
       <a class="btn btn-light hbtn" href="#kontakty">Записаться</a>
     </div>
   </div>
@@ -286,14 +331,17 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
 
 <section class="cover">
   <div class="cover-in">
-    <div class="cover-eyebrow">Пермь · Вышка-2 · Лысьва</div>
+    <div class="cover-eyebrow only-perm">Пермь · Вышка-2 · улица Целинная, 43</div>
+    <div class="cover-eyebrow only-lysva">Лысьва · мастера студии</div>
     <div class="cover-name">Ирина Лычагина</div>
     <div class="cover-role"><span></span>Кератин · Ботокс · Реконструкция волос<span></span></div>
     <div class="cover-slogan">Уход, которого ждали твои волосы</div>
-    <p class="cover-lead">Международный эксперт по реконструкции волос и кератиновому выпрямлению. Более семи лет опыта, более трёх тысяч довольных клиентов. Улица Целинная, 43. Приём по предварительной записи.</p>
+    <p class="cover-lead only-perm">Международный эксперт по реконструкции волос и кератиновому выпрямлению. Более семи лет опыта, более трёх тысяч довольных клиентов. В Перми принимаю лично: улица Целинная, 43, по предварительной записи.</p>
+    <p class="cover-lead only-lysva">В Лысьве работают мастера Мария и Виолетта. Я обучила их лично: те же составы, те же протоколы, тот же результат — за их работу отвечаю так же, как за свою. Адрес и график в Лысьве <span class="tbd">уточняются</span>.</p>
     <div class="cover-cta">
       <a class="btn btn-gold" href="#ceny">Смотреть цены</a>
-      <a class="btn" href="tel:+79081057757">Позвонить и записаться</a>
+      <a class="btn only-perm" href="tel:+79081057757">Позвонить и записаться</a>
+      <a class="btn only-lysva" href="#kontakty">Как записаться в Лысьве</a>
       <a class="btn btn-line" href="https://vk.ru/keratin_badalova" target="_blank" rel="noopener">Написать во ВКонтакте</a>
     </div>
   </div>
@@ -317,12 +365,13 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
       <span class="tag">Прайс</span>
       <h2>Цена зависит от длины, <em>и она открыта</em></h2>
       <p>Кератин и ботокс в горячей технике. Процедуры убирают пушистость и выпрямляют завиток разной степени, эффект держится от трёх до шести месяцев. Точную сумму мастер называет до начала работы.</p>
+      <p class="only-lysva" style="margin-top:10px">Прайс мастеров в Лысьве взят из сообщества ВКонтакте — <span class="tbd">подтвердите, что цены актуальны</span>.</p>
     </div>
 
     <div class="tabs rv">
-      <button class="tab on" data-t="irina">Эксперт Ирина</button>
-      <button class="tab" data-t="maria">Мастер Мария</button>
-      <button class="tab" data-t="violetta">Мастер Виолетта</button>
+      <button class="tab on only-perm" data-t="irina">Эксперт Ирина</button>
+      <button class="tab only-lysva" data-t="maria">Мастер Мария</button>
+      <button class="tab only-lysva" data-t="violetta">Мастер Виолетта</button>
       <button class="tab" data-t="esche">Другие услуги</button>
     </div>
 
@@ -426,17 +475,20 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
 <section id="master">
   <div class="wrap">
     <div class="sec-head rv">
-      <span class="tag">О мастере</span>
-      <h2>Ирина <em>Лычагина</em></h2>
-      <p>Международный эксперт в сфере реконструкции волос и кератинового выпрямления.</p>
+      <span class="tag only-perm">О мастере</span>
+      <span class="tag only-lysva">Мастера</span>
+      <h2 class="only-perm">Ирина <em>Лычагина</em></h2>
+      <h2 class="only-lysva">Кто работает <em>в Лысьве</em></h2>
+      <p class="only-perm">Международный эксперт в сфере реконструкции волос и кератинового выпрямления.</p>
+      <p class="only-lysva">Мария и Виолетта — мастера, которых Ирина обучила лично. Работают на тех же составах и по тем же протоколам.</p>
     </div>
-    <div class="doc-grid">
+    <div class="doc-grid only-perm">
       <div class="doc-txt rv">
         <div class="q-big">Я не просто мастер, я технолог, который работает с волосами на глубоком уровне</div>
         <div class="q-from">Ирина Лычагина, из описания сообщества</div>
         <p>«Подбираю индивидуальные составы и создаю авторские миксы под каждый тип волос. Моя цель - создать для вас идеальное полотно: эффект жидкого шёлка, гладкие, блестящие, плотные волосы, восстановление даже после сильных повреждений».</p>
         <p>Более семи лет опыта, более трёх тысяч довольных клиентов, внесена в реестр международных мастеров. Сильная клиентская база в Омске и Лысьве.</p>
-        <p>«Переехала из Сибири на Урал, теперь принимаю в Перми и открываю запись для новых клиентов». Кроме Ирины в студии работают мастера Мария и Виолетта, у них своя сетка цен.</p>
+        <p>«Переехала из Сибири на Урал, теперь принимаю в Перми и открываю запись для новых клиентов». В Лысьве работают мастера Мария и Виолетта, у них своя сетка цен — переключите город наверху.</p>
         <div class="doc-facts">
           <div><b>Целинная, 43</b><span>Мотовилихинский район, Вышка-2</span></div>
           <div><b>8:00-23:00</b><span>ежедневно, по записи</span></div>
@@ -449,6 +501,22 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
         <figcaption><b>Ирина Лычагина</b><span>кератин, ботокс, реконструкция волос</span></figcaption>
       </figure>
     </div>
+
+    <div class="mgrid only-lysva rv">
+      <div class="mcard">
+        <div class="ph">М</div>
+        <div class="role">Мастер · Лысьва</div>
+        <h3>Мария</h3>
+        <p>Кератиновое выпрямление и ботокс для волос. Обучена лично Ириной, работает на тех же составах. <span class="tbd">Фото и опыт — пришлите, поставим сюда</span>.</p>
+      </div>
+      <div class="mcard">
+        <div class="ph">В</div>
+        <div class="role">Мастер · Лысьва</div>
+        <h3>Виолетта</h3>
+        <p>Кератиновое выпрямление и ботокс для волос. Обучена лично Ириной, работает на тех же составах. <span class="tbd">Фото и опыт — пришлите, поставим сюда</span>.</p>
+      </div>
+    </div>
+    <p class="upd only-lysva">Ирина принимает в Перми. За работу мастеров в Лысьве она отвечает лично: обучение, составы и протоколы — её.</p>
   </div>
 </section>
 
@@ -460,7 +528,7 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
       <p>Фотографии из сообщества ВКонтакте, где выложено больше четырёхсот работ.</p>
     </div>
     <div class="g-grid rv">
-      <figure class="g"><img src="g-1.jpg" alt="Гладкие блестящие волосы после кератина"><figcaption>Кератин, растяжка цвета</figcaption></figure>
+      <figure class="g"><img src="g-1.jpg" alt="Гладкие блестящие волосы после кератина"><figcaption>Кератин, эффект жидкого шёлка</figcaption></figure>
       <figure class="g"><img src="g-2.jpg" alt="Результат кератинового выпрямления"><figcaption>Кератиновое выпрямление</figcaption></figure>
       <figure class="g"><img src="g-3.jpg" alt="Светлые волосы после процедуры"><figcaption>Работа на блонде</figcaption></figure>
       <figure class="g"><img src="g-4.jpg" alt="Кабинет студии"><figcaption>В кабинете</figcaption></figure>
@@ -474,9 +542,10 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
     <div class="sec-head rv">
       <span class="tag">Отзывы</span>
       <h2>Что пишут <em>клиенты</em></h2>
-      <p>Отзывы из карточки 2ГИС: 11 оценок, средний балл 5,0, отрицательных нет.</p>
+      <p class="only-perm">Отзывы из карточки 2ГИС по Перми: 11 оценок, средний балл 5,0, отрицательных нет.</p>
+      <p class="only-lysva">Отзывы клиентов из Лысьвы.</p>
     </div>
-    <div class="rv-grid rv">
+    <div class="rv-grid rv only-perm">
       <div class="r"><div class="stars">★★★★★</div>
         <p>Ирина мастер своего дела! Мои убитые осветлениями волосы превратила в гриву, бесконечно рада.</p>
         <div class="who">Арина Широкова</div><div class="when">2ГИС</div></div>
@@ -496,6 +565,11 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
         <p>Ира профессионал в своём деле, с подобранным уходом удалось отрастить волосы.</p>
         <div class="who">Наталья</div><div class="when">2ГИС</div></div>
     </div>
+
+    <div class="askbox only-lysva rv">
+      <b>Здесь встанут отзывы из Лысьвы</b>
+      Пришлите скриншоты благодарностей из ВКонтакте или Telegram — поставим их в такие же карточки, как отзывы по Перми.
+    </div>
   </div>
 </section>
 
@@ -507,19 +581,34 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
     </div>
     <div class="c-grid">
       <div class="c-list rv">
-        <div class="c-row">
-          <div class="k">Адрес</div>
+        <div class="c-row only-perm">
+          <div class="k">Адрес · Пермь</div>
           <div class="v">Пермь, улица Целинная, 43</div>
-          <small>Мотовилихинский район, микрорайон Вышка-2, 614054. Ирина также принимает в Лысьве, время уточняйте.</small>
+          <small>Мотовилихинский район, микрорайон Вышка-2, 614054. Принимает лично Ирина.</small>
         </div>
-        <div class="c-row">
+        <div class="c-row only-lysva">
+          <div class="k">Адрес · Лысьва</div>
+          <div class="v">Лысьва, <span class="tbd">улица и номер кабинета уточняются</span></div>
+          <small>Принимают мастера Мария и Виолетта.</small>
+        </div>
+        <div class="c-row only-perm">
           <div class="k">Режим работы</div>
           <div class="v">Ежедневно с 8:00 до 23:00</div>
           <small>По предварительной записи</small>
         </div>
-        <div class="c-row">
+        <div class="c-row only-lysva">
+          <div class="k">Режим работы</div>
+          <div class="v"><span class="tbd">график уточняется</span></div>
+          <small>По предварительной записи</small>
+        </div>
+        <div class="c-row only-perm">
           <div class="k">Телефон</div>
           <div class="v"><a href="tel:+79081057757">+7 908 105-77-57</a></div>
+        </div>
+        <div class="c-row only-lysva">
+          <div class="k">Телефон</div>
+          <div class="v"><span class="tbd">номер уточняется</span></div>
+          <small>Запись идёт на Ирину или напрямую к мастерам — уточним и поставим нужный номер.</small>
         </div>
         <div class="c-row">
           <div class="k">Соцсети</div>
@@ -531,12 +620,13 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
         <h3>Записаться на процедуру</h3>
         <p class="sub">Напишите или позвоните. Пришлите фото волос и напишите длину, мастер сразу назовёт цену и подберёт процедуру.</p>
         <div class="acts">
-          <a class="btn btn-gold" href="tel:+79081057757">Позвонить +7 908 105-77-57</a>
+          <a class="btn btn-gold only-perm" href="tel:+79081057757">Позвонить +7 908 105-77-57</a>
           <a class="btn" href="https://vk.ru/keratin_badalova" target="_blank" rel="noopener">Написать во ВКонтакте</a>
           <a class="btn btn-line" href="https://t.me/keratin_badalova" target="_blank" rel="noopener">Написать в Telegram</a>
-          <a class="btn btn-line" href="https://2gis.ru/perm/firm/70000001116797274" target="_blank" rel="noopener">Открыть на карте 2ГИС</a>
+          <a class="btn btn-line only-perm" href="https://2gis.ru/perm/firm/70000001116797274" target="_blank" rel="noopener">Открыть на карте 2ГИС</a>
         </div>
         <p class="note">Форм на сайте нет: запись только напрямую, чтобы заявка не потерялась.</p>
+        <p class="note only-lysva">Кнопка с телефоном Лысьвы появится здесь, как только вы пришлёте номер.</p>
       </div>
     </div>
   </div>
@@ -551,7 +641,8 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
           Наименование: <b>[указать: самозанятая / ИП, полное наименование]</b><br>
           ФИО: Лычагина Ирина <b>[отчество уточнить]</b><br>
           ИНН: <b>[указать]</b> · ОГРНИП: <b>[указать, если ИП]</b><br>
-          Адрес оказания услуг: 614054, Пермский край, г. Пермь, ул. Целинная, 43<br>
+          <span class="only-perm">Адрес оказания услуг: 614054, Пермский край, г. Пермь, ул. Целинная, 43<br></span>
+          <span class="only-lysva">Адрес оказания услуг: Пермский край, г. Лысьва, <span class="tbd">уточняется</span><br></span>
           Телефон: <a href="tel:+79081057757">+7 908 105-77-57</a><br>
           Режим работы: ежедневно с 8:00 до 23:00, по предварительной записи
         </p>
@@ -578,16 +669,18 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
 <footer>
   <div class="wrap ft">
     <span class="logo">Ирина Лычагина</span>
-    <span>Пермь, ул. Целинная, 43 · ежедневно 8:00-23:00 · +7 908 105-77-57</span>
+    <span class="only-perm">Пермь, ул. Целинная, 43 · ежедневно 8:00-23:00 · +7 908 105-77-57</span>
+    <span class="only-lysva">Лысьва · мастера Мария и Виолетта · адрес и телефон уточняются</span>
   </div>
 </footer>
 
 <div class="mbar">
-  <a class="btn btn-gold" href="tel:+79081057757">Позвонить</a>
+  <a class="btn btn-gold only-perm" href="tel:+79081057757">Позвонить</a>
+  <a class="btn btn-gold only-lysva" href="#kontakty">Записаться</a>
   <a class="btn" href="https://vk.ru/keratin_badalova">Написать в ВК</a>
 </div>
 
-<div class="demo">Это <b>демонстрационный пример</b> сайта. Данные взяты из открытой карточки 2ГИС и сообщества ВКонтакте, реквизиты подставляются после согласования.</div>
+<div class="demo">Это <b>демонстрационный пример</b> сайта. Наверху — переключатель <b>Пермь / Лысьва</b>: адрес, мастер, телефон, прайс и отзывы меняются под выбранный город, услуги и работы общие. <span class="tbd">Золотым пунктиром</span> отмечено то, что нужно от вас: адрес и телефон в Лысьве, фото мастеров, отзывы.</div>
 
 <script>
 (function(){
@@ -604,6 +697,36 @@ footer{background:var(--deep-d);color:rgba(226,230,238,.7);padding:30px 0;font-s
       document.getElementById(t.dataset.t).classList.add('on');
     });
   });
+
+  function setCity(c,user){
+    if(c!=='perm'&&c!=='lysva'){c='perm'}
+    document.body.classList.remove('city-perm','city-lysva');
+    document.body.classList.add('city-'+c);
+    document.querySelectorAll('.cbtn').forEach(function(b){b.classList.toggle('on',b.dataset.city===c)});
+    var all=document.querySelectorAll('.tab'),first=null;
+    all.forEach(function(t){
+      var off=(c==='perm'&&t.classList.contains('only-lysva'))||(c==='lysva'&&t.classList.contains('only-perm'));
+      if(!off&&!first){first=t}
+    });
+    if(first){
+      all.forEach(function(x){x.classList.remove('on')});
+      first.classList.add('on');
+      document.querySelectorAll('.plist').forEach(function(p){p.classList.remove('on')});
+      var pl=document.getElementById(first.dataset.t); if(pl){pl.classList.add('on')}
+    }
+    try{localStorage.setItem('city',c)}catch(e){}
+    if(user){
+      try{history.replaceState(null,'','#'+c)}catch(e){}
+      setTimeout(function(){document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in')})},30);
+    }
+  }
+  document.querySelectorAll('.cbtn').forEach(function(b){
+    b.addEventListener('click',function(){setCity(b.dataset.city,true)});
+  });
+  var hs=(location.hash||'').replace('#','').toLowerCase(), start='';
+  if(hs==='perm'||hs==='lysva'){start=hs}
+  else{try{start=localStorage.getItem('city')||''}catch(e){}}
+  setCity(start||'perm',false);
 
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
